@@ -574,3 +574,13 @@ describe('Problema de tipus de funció amb promeses', () => {
 // type tests = [Expect<Equal<MyFuncReturn, string>>];
 // Pista: pots utilitzar typeof per obtenir el tipus d'una variable o funció.
 // */
+
+describe('Problema de ReturnType', () => {
+    const myFunc = () => {
+        return 'Hola';
+    };
+
+    type MyFuncReturn = ReturnType<typeof myFunc>;
+
+    type tests = [Expect<Equal<MyFuncReturn, string>>];
+});
