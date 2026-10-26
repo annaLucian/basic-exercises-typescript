@@ -390,7 +390,7 @@ describe('Problema de blocs catch', () => {
                 throw new Error('Failure!');
             }
         } catch (e) {
-            return e.message;
+            return (e as Error).message;
         }
     };
 
