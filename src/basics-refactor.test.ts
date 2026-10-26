@@ -360,17 +360,22 @@ describe('Problema de Record', () => {
 // Pista: utilitza typeof per diferenciar entre nombre i objecte.
 // */
 
-// describe("Problema de filtratge amb typeof", () => {
-//   const coerceAmount = (amount: number | { amount: number }) => {};
+describe('Problema de filtratge amb typeof', () => {
+    const coerceAmount = (amount: number | { amount: number }) => {
+        if (typeof amount === 'number') {
+            return amount;
+        }
+        return amount.amount;
+    };
 
-//   it("Ha de retornar l'import quan es passa un objecte", () => {
-//     expect(coerceAmount({ amount: 20 })).toEqual(20);
-//   });
+    it("Ha de retornar l'import quan es passa un objecte", () => {
+        expect(coerceAmount({ amount: 20 })).toEqual(20);
+    });
 
-//   it("Ha de retornar l'import quan es passa un nombre", () => {
-//     expect(coerceAmount(20)).toEqual(20);
-//   });
-// });
+    it("Ha de retornar l'import quan es passa un nombre", () => {
+        expect(coerceAmount(20)).toEqual(20);
+    });
+});
 
 // /*
 // Repte 13:
@@ -378,21 +383,21 @@ describe('Problema de Record', () => {
 // Pista: hi ha diverses maneres de resoldre aquest repte, prova diferents opcions!
 // */
 
-// describe("Problema de blocs catch", () => {
-//   const tryCatchDemo = (state: "fail" | "succeed") => {
-//     try {
-//       if (state === "fail") {
-//         throw new Error("Failure!");
-//       }
-//     } catch (e) {
-//       return e.message;
-//     }
-//   };
+describe('Problema de blocs catch', () => {
+    const tryCatchDemo = (state: 'fail' | 'succeed') => {
+        try {
+            if (state === 'fail') {
+                throw new Error('Failure!');
+            }
+        } catch (e) {
+            return e.message;
+        }
+    };
 
-//   it("Ha de retornar el missatge quan falla", () => {
-//     expect(tryCatchDemo("fail")).toEqual("Failure!");
-//   });
-// });
+    it('Ha de retornar el missatge quan falla', () => {
+        expect(tryCatchDemo('fail')).toEqual('Failure!');
+    });
+});
 
 // /*
 // Repte 14:
