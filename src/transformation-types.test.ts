@@ -311,7 +311,7 @@ describe("Transformació: obtenir el tipus del discriminador d'una discriminated
 describe("Transformació: obtenir el tipus a partir d'un array de valors", () => {
     const fruits = ['apple', 'banana', 'orange'] as const;
 
-    type AppleOrBanana = Exclude<Fruit, 'orange'>;
+    type AppleOrBanana = (typeof fruits)[0 | 1];
     type Fruit = (typeof fruits)[number];
 
     type tests = [
