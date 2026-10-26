@@ -298,7 +298,7 @@ describe('Problema de Set', () => {
         expect(guitarists.has('Eric Clapton')).toEqual(true);
     });
 
-    it.only("Ha de donar un error de tipus si proves d'afegir un valor que no sigui string", () => {
+    it("Ha de donar un error de tipus si proves d'afegir un valor que no sigui string", () => {
         // @ts-expect-error
         guitarists.add(2);
     });
@@ -317,42 +317,42 @@ describe('Problema de Set', () => {
 // Pista: Consulta com representar objectes amb claus de tipus string i valors tipats.
 // */
 
-// describe("Problema de Record", () => {
-//   const createCache = () => {
-//     const cache = {};
+describe('Problema de Record', () => {
+    const createCache = () => {
+        const cache: Record<string, string> = {};
 
-//     const add = (id: string, value: string) => {
-//       cache[id] = value;
-//     };
+        const add = (id: string, value: string) => {
+            cache[id] = value;
+        };
 
-//     const remove = (id: string) => {
-//       delete cache[id];
-//     };
+        const remove = (id: string) => {
+            delete cache[id];
+        };
 
-//     return {
-//       cache,
-//       add,
-//       remove,
-//     };
-//   };
+        return {
+            cache,
+            add,
+            remove,
+        };
+    };
 
-//   it("Ha d'afegir valors a la memòria cache", () => {
-//     const cache = createCache();
+    it("Ha d'afegir valors a la memòria cache", () => {
+        const cache = createCache();
 
-//     cache.add("123", "Jen");
+        cache.add('123', 'Jen');
 
-//     expect(cache.cache["123"]).toEqual("Jen");
-//   });
+        expect(cache.cache['123']).toEqual('Jen');
+    });
 
-//   it("Ha d'eliminar valors de la memòria cache", () => {
-//     const cache = createCache();
+    it("Ha d'eliminar valors de la memòria cache", () => {
+        const cache = createCache();
 
-//     cache.add("123", "Jen");
-//     cache.remove("123");
+        cache.add('123', 'Jen');
+        cache.remove('123');
 
-//     expect(cache.cache["123"]).toEqual(undefined);
-//   });
-// });
+        expect(cache.cache['123']).toEqual(undefined);
+    });
+});
 
 // /*
 // Repte 12:
